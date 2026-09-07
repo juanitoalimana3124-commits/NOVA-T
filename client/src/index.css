@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: #0A0A0F;
+  color: #FFFFFF;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #0A0A0F; }
+::-webkit-scrollbar-thumb { background: #2E2E50; border-radius: 4px; }
+
+@layer components {
+  /* ── Cards ── */
+  .card {
+    @apply bg-card border border-border rounded-2xl shadow-card;
+  }
+  .card-glass {
+    background: rgba(26,26,46,0.75);
+    backdrop-filter: blur(12px);
+    @apply border border-border rounded-2xl;
+  }
+
+  /* ── Inputs ── */
+  .input-field {
+    @apply bg-surface border border-border rounded-xl px-4 py-3 text-white placeholder-faint
+           text-sm outline-none focus:border-primary transition-all w-full;
+  }
+
+  /* ── Buttons ── */
+  .btn-primary {
+    @apply bg-grad-primary text-white font-semibold rounded-xl px-5 py-3
+           transition-all text-sm cursor-pointer hover:opacity-90 active:scale-95
+           shadow-glow-primary;
+  }
+  .btn-secondary {
+    @apply bg-surface border border-border text-white font-semibold rounded-xl px-5 py-3
+           transition-all text-sm cursor-pointer hover:bg-card-2 active:scale-95;
+  }
+  .btn-gold {
+    @apply bg-grad-gold text-white font-semibold rounded-xl px-5 py-3
+           transition-all text-sm cursor-pointer hover:opacity-90 active:scale-95
+           shadow-glow-gold;
+  }
+  .btn-green {
+    @apply bg-grad-green text-white font-semibold rounded-xl px-5 py-3
+           transition-all text-sm cursor-pointer hover:opacity-90 active:scale-95
+           shadow-glow-green;
+  }
+  .btn-danger {
+    background-color: #E11D48;
+    @apply text-white font-semibold rounded-xl px-5 py-3
+           transition-all text-sm cursor-pointer hover:opacity-90 active:scale-95;
+  }
+  .btn-success {
+    background-color: #059669;
+    @apply text-white font-semibold rounded-xl px-5 py-3
+           transition-all text-sm cursor-pointer hover:opacity-90 active:scale-95;
+  }
+
+  /* ── Badge ── */
+  .badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold;
+  }
+
+  /* ── Layout ── */
+  .pb-nav { padding-bottom: 5rem; }
+  .page { @apply px-4 py-5 space-y-5 animate-fade-in pb-nav; }
+}
+
+/* Hero subtle tint */
+.hero-glow {
+  background: radial-gradient(ellipse at 50% 0%, rgba(249,115,22,0.20) 0%, transparent 70%);
+}
+
+@keyframes fadeIn  { from { opacity: 0; }                              to { opacity: 1; } }
+@keyframes slideUp { from { transform: translateY(18px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.animate-fade-in  { animation: fadeIn  0.25s ease-out; }
+.animate-slide-up { animation: slideUp 0.3s ease-out; }

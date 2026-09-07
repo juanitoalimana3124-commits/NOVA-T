@@ -1,0 +1,55 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        bg:       '#0A0A0F',
+        surface:  '#13131F',
+        card:     '#1A1A2E',
+        'card-2': '#22223A',
+        border:   '#2E2E50',
+        primary:  '#F97316',
+        'primary-dark': '#EA580C',
+        'primary-light':'#FB923C',
+        gold:     '#D97706',
+        'gold-light':'#F59E0B',
+        green:    '#059669',
+        'green-dark':'#047857',
+        rose:     '#E11D48',
+        cyan:     '#0891B2',
+        blue:     '#2563EB',
+        muted:    '#8B8BAA',
+        faint:    '#55556A',
+        red:      '#E11D48',
+      },
+      fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+      backgroundImage: {
+        'grad-primary': 'linear-gradient(135deg, #F97316 0%, #EA580C 100%)',
+        'grad-gold':    'linear-gradient(135deg, #F59E0B 0%, #D97706 100%)',
+        'grad-green':   'linear-gradient(135deg, #10B981 0%, #059669 100%)',
+        'grad-dark':    'linear-gradient(135deg, #1A1A2E 0%, #13131F 100%)',
+        'grad-hero':    'linear-gradient(135deg, #1f1200 0%, #0A0A0F 60%)',
+      },
+      animation: {
+        'fade-in':    'fadeIn 0.25s ease-out',
+        'slide-up':   'slideUp 0.3s ease-out',
+        'pulse-soft': 'pulse 2.5s cubic-bezier(0.4,0,0.6,1) infinite',
+        'spin-slow':  'spin 3s linear infinite',
+        'glow':       'glow 2s ease-in-out infinite alternate',
+      },
+      keyframes: {
+        fadeIn:  { '0%': { opacity:'0' },                                  '100%': { opacity:'1' } },
+        slideUp: { '0%': { transform:'translateY(18px)', opacity:'0' },    '100%': { transform:'translateY(0)', opacity:'1' } },
+        glow:    { '0%': { boxShadow:'0 0 5px #F9731644' },               '100%': { boxShadow:'0 0 20px #F9731688' } },
+      },
+      boxShadow: {
+        'glow-primary': '0 0 16px #F9731633',
+        'glow-gold':    '0 0 16px #D9770622',
+        'glow-green':   '0 0 16px #05996922',
+        'card':         '0 4px 24px rgba(0,0,0,0.5)',
+      },
+    },
+  },
+  plugins: [],
+}
